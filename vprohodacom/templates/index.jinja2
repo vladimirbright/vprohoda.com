@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block head_title %}Владимир Прохода{% endblock %}</title>
+        <link rel="shortcut icon" href="/static/favicon.ico"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+        <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="/static/css/print.css" media="print" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="/static/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        {% block head_extra %}{% endblock %}
+    </head>
+    <body>
+    {% block body %}
+        <div class="container index_page">
+        {% block body_container %}
+            <p>
+            Мой профиль на <a href="http://prohoda-vladimir.moikrug.ru/"><img src="http://favicon.yandex.ru/favicon/moikrug.ru" /> Моем круге</a>
+            </p>
+            <p>
+            Мой маленький <a href="http://knbase.info/"><img src="/static/favicon.ico" /> закладочный сайт</a>
+            </p>
+            <p>
+            Мой маленький бложек <a href="http://friendfeed.com/vladimirbright"><img src="http://favicon.yandex.ru/favicon/friendfeed.com" /> Friendfeed</a>
+            </p>
+            <p>
+            Мой адрес электронной почты <a href="mailto:i@vprohoda.com"><img src="http://favicon.yandex.ru/favicon/pdd.yandex.ru" /> i@vprohoda.com</a>
+            </p>
+            {% endblock %}
+            <div class="asterisk">* сайт особенно хорошо смотрится со шрифтом <a href="http://font.ubuntu.com/">Ubuntu</a></div>
+        </div>
+    {% endblock %}
+    </body>
+</html>

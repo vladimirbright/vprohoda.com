@@ -1,0 +1,36 @@
+translationstring
+=================
+
+0.4 (09-22-2011)
+----------------
+
+- Python 3 compatibility (thanks to Joe Dallago, GSOC student).
+
+- Remove testing dependency on Babel.
+
+- Moved to GitHub (https://github.com/Pylons/translationstring).
+
+- Added tox.ini for testing purposes.
+
+0.3 (06-25-2010)
+----------------
+
+- Preserve default translations even if they are an empty string. This
+  fixes problems with Chameleon being unable to determine if a translation
+  is present or not.
+
+0.2 (04-25-2010)
+----------------
+
+- Add ``__getstate__`` and ``__reduce__`` methods to translation
+  string to allow for pickling.
+
+- Fix bug in ChameleonTranslate.  When ``i18n:translate`` was used in
+  templates, a translation string was inappropriately created with a
+  ``default`` value of the empty string.  Symptom: template text would
+  "disappear" rather than being returned untranslated.
+
+0.1 (04-24-2010)
+----------------
+
+- Initial release.

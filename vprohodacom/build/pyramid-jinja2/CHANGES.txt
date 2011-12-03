@@ -1,0 +1,125 @@
+1.2 (2011-09-27)
+================
+
+- Make tests pass on Pyramid 1.2dev.
+
+- Make compatible with Python 3.2 (requires Pyramid 1.3dev+).
+
+1.1 (2011-07-24)
+================
+
+- Add ``get_jinja2_environment`` directive.
+
+- Add all configurator directives to documentation.
+
+1.0 (2011-05-12)
+================
+
+- Message domain can now be specified with *jinja2.i18n.domain* for i18n
+
+- Paster template now sets up starter locale pot/po/mo files
+
+- pyramid_jinja2 now depends on Jinja2 >= 2.5.0 due to
+  ``jinja2.Environment.install_gettext_callables`` use
+  https://github.com/Pylons/pyramid_jinja2/pull/21
+
+- Added demo app just to visualize i18n work
+
+0.6.2 (2011-04-06)
+==================
+
+- ``jinja2.ext.i18n`` is now added by default, see ``i18n.rst``
+  for details
+
+- Added ``add_jinja2_extension`` directive to the Configurator
+
+- Updated jinja2.extensions parsing mechanism
+
+- Fixed docs to indicate using asset: prefix is no longer necessary
+
+0.6.1 (2011-03-03)
+==================
+
+- Asset-based loading now takes precedance and does not require
+  "asset:" prefix
+
+- Fixed the "current" package mechanism of asset: loading so that
+  it more accurately finds the current package
+
+- Dependency on ``pyramid_zcml`` removed.
+
+0.6 (2011-02-15)
+================
+
+- Documentation overhauled.
+
+- Templates can now be looked up by asset spec completely bypassing
+  the search path by specifying a prefix of ``asset:``.
+
+- Updated paster template to more closely relate to changes made
+  to paster templmates in Pyramid core.
+
+- Add new directive ``add_jinja2_search_path`` to the configurator
+  when ``includeme`` is used.
+
+0.5 (2011-01-18)
+================
+
+- Add ``includeme`` function (meant to be used via ``config.include``).
+
+- Fix documentation bug related to ``paster create`` reported at
+  https://github.com/Pylons/pyramid_jinja2/issues#issue/12
+
+- Depend upon Pyramid 1.0a10 + (to make ZCML work).
+
+0.4 (2010-12-16)
+================
+
+Paster Template
+---------------
+
+- Changes to normalize with default templates shipping with Pyramid core:
+  remove calls to ``config.begin()`` and ``config.end()`` from
+  ``__init__.main``, entry point name changed to ``main``, entry
+  ``__init__.py`` function name changed to ``main``, depend on WebError, use
+  ``paster_plugins`` argument to setup function in setup.py, depend on
+  Pyramid 1.0a6+ (use ``config`` rather than ``configurator``).
+
+Tests
+-----
+
+- Use ``testing.setUp`` and ``testing.tearDown`` rather than constructing a
+  Configurator (better fwd compat).
+
+Features
+--------
+
+- Add ``model_url`` and ``route_url`` filter implementations (and
+  documented).
+
+Documentation
+-------------
+
+- Use Makefile which pulls in Pylons theme automagically.
+
+0.3 (2010-11-26)
+================
+
+- Add ``jinja2.filters`` and ``jinja2.extensions`` settings (thanks to
+  aodag).
+
+- Document all known settings.
+
+0.2 (2010-11-06)
+================
+
+- Template autoreloading did not function, even if ``reload_templates`` was
+  set to ``True``.
+
+0.1 (2010-11-05)
+================
+
+- First release.  *Not* backwards compatible with ``repoze.bfg.jinja2``: we
+  use a filesystem loader (the directories to load from come from the
+  ``jinja2.directories`` setting).  No attention is paid to the current
+  package when resolving a renderer= line.

@@ -1,0 +1,27 @@
+img {
+    border: 0;
+}
+.container {
+    width: 400px;
+    margin: 15% auto 0 auto;
+    font-family: Ubuntu,Arial,sans-serif;
+    font-size: 16px;
+    a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        img {
+          border: none;
+        }
+    }
+}
+.asterisk {
+    font-size: 11px;
+    color: #7c7c7c;
+}
+.index_page {
+  img {
+    vertical-align: bottom;
+  }
+}
