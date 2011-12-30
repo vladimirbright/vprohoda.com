@@ -1,7 +1,0 @@
-./.installed.cfg
-./bin
-./eggs
-./develop-eggs
-./parts
-*.egg-info
-./docs/_build/*
